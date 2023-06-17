@@ -7,7 +7,6 @@ pipeline{
                     echo "===============Building Application==============="
                 }
             }
-           
         }
 
         stage("deploy"){
@@ -15,11 +14,8 @@ pipeline{
                 script{
                     echo "===============Testing Application================="
                 }
-            }
-           
+            }  
         }
-
-        
     }
     post{
         always{
