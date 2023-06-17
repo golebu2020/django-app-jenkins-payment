@@ -5,7 +5,7 @@ pipeline{
             steps{
                 script{
                     echo "===============Building Application==============="
-                    sh "docker build --tag django-payment-app:1.0 ."
+                    sh "docker build --tag golebu2020/maven-repo:django-payment-app-1.0 ."
                 }
             }
         }
@@ -15,7 +15,7 @@ pipeline{
                 script{
                     echo "===============Deploying Application================="
                     sh "echo Nedu123@# | docker login -u golebu2020 --password-stdin"
-                    sh "docker push django-payment-app:1.0"
+                    sh "docker push docker push golebu2020/maven-repo:django-payment-app-1.0"
                 }
             }  
         }
