@@ -4,19 +4,17 @@ LABEL maintainer="Chinedu Olebu"
 
 ENV PYTHONUNBUFFERED 1
 
-RUN apt-get update && useradd chinedu
+RUN adduser chinedu
 
-USER Chinedu
+USER chinedu
 
 COPY . /App
 
 WORKDIR /App
 
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip \
+ && pip install -r requirements.txt 
 
-RUN pip install -r requirements.txt
-
-RUN rm -rf requirements.txt
 
 EXPOSE 8000
 
