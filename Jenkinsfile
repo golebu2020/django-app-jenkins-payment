@@ -14,7 +14,7 @@ pipeline{
             steps{
                 script{
                     echo "===============Deploying Application================="
-                    sh "docker login docker -u golebu2020 -p Nedu123@#"
+                    sh "echo Nedu123@# | docker login -u golebu2020 --password-stdin"
                     sh "docker push golebu2020/maven-repo:djangoapp-1.0"
                 }
             }  
