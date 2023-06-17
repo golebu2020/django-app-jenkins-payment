@@ -12,7 +12,7 @@ pipeline{
         stage("deploy"){
             steps{
                 script{
-                    echo "===============Testing Application================="
+                    echo "===============Deploying Application================="
                 }
             }  
         }
