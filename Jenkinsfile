@@ -5,7 +5,7 @@ pipeline{
             steps{
                 script{
                     echo "===============Building Application==============="
-                    docker build --tag django-payment-app:1.0 .
+                    sh "docker build --tag django-payment-app:1.0 ."
                 }
             }
         }
