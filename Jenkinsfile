@@ -15,7 +15,7 @@ pipeline{
                 script{
                     echo "===============Deploying Application================="
                     sh "echo Nedu123@# | docker login -u golebu2020 --password-stdin"
-                    sh "docker push docker push golebu2020/maven-repo:django-payment-app-1.0"
+                    sh "docker push golebu2020/maven-repo:django-payment-app-1.0"
                 }
             }  
         }
