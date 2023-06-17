@@ -4,7 +4,7 @@ LABEL maintainer="Chinedu Olebu"
 
 ENV PYTHONUNBUFFERED 1
 
-RUN apt-get update && useradd -ms Chinedu
+RUN apt-get update && useradd chinedu
 
 USER Chinedu
 
