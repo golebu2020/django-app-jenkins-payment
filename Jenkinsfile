@@ -14,8 +14,11 @@ pipeline{
             steps{
                 script{
                     echo "===============Deploying Application================="
-                    sh "echo Nedu123@# | docker login -u golebu2020 --password-stdin"
-                    sh "docker push golebu2020/maven-repo:django-payment-app-1.0"
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
+                        sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
+                        sh "docker push golebu2020/maven-repo:django-payment-app-1.0"
+                    }
+
                 }
             }  
         }
