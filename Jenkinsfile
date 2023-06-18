@@ -4,7 +4,7 @@ pipeline{
         stage("build"){
             steps{
                 script{
-                    echo "===============Building Applicationfd==============="
+                    echo "===============Building Applicationfdd==============="
                     sh "docker build --tag golebu2020/maven-repo:django-payment-app-1.0 ."
                 }
             }
