@@ -1,11 +1,16 @@
+#!/usr/bin/env groovy
+
+def gv
 pipeline{
     agent any
     stages{
+        stage("init"){
+            gv = load "script.groovy"
+        }
         stage("build"){
             steps{
                 script{
-                    echo "===============Building Application Discard old builds==============="
-                    sh "docker build --tag golebu2020/maven-repo:django-payment-app-1.0 ."
+                   gv.buildApp()
                 }
             }
         }
@@ -13,12 +18,7 @@ pipeline{
         stage("deploy"){
             steps{
                 script{
-                    echo "===============Deploying Application================="
-                    withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
-                        sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
-                        sh "docker push golebu2020/maven-repo:django-payment-app-1.0"
-                    }
-
+                   gv.deployApp()
                 }
             }  
         }
