@@ -1,5 +1,5 @@
 def buildApp(){
-    echo "===============Building Application Discard old builds==============="
+    echo "===============Building Application==============="
     sh "docker build --tag golebu2020/maven-repo:django-payment-app-1.0 ."
 }
 return this
