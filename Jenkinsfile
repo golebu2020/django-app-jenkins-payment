@@ -19,6 +19,14 @@ pipeline{
             }
         }
 
+        stage("login"){
+            steps{
+                scripts{
+                    gv.login()
+                }
+            }
+        }
+
         stage("deploy"){
             steps{
                 script{
