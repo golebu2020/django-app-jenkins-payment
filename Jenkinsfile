@@ -21,7 +21,7 @@ pipeline{
 
         stage("login"){
             steps{
-                scripts{
+                script{
                     gv.login()
                 }
             }
